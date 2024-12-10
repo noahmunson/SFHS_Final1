@@ -7,16 +7,25 @@ public class Game {
     private Level  levelTwo;
     private Level levelThree;
     private int ScoreSum = 0;
+    private static boolean BonusRound;
+    private int numGames;
 
     public Game() {
+        numGames = 1;
+        BonusRound = false;
 
     }
-    public boolean isBonus() {
+    public Game(boolean BonusRound, int numGames) {
+        Game.BonusRound = BonusRound;
+        this.numGames = numGames;
+    }
+    public static boolean isBonus() {
+        return BonusRound;
+    }
+    public void play(int num) {
 
     }
-    public void play() {
 
-    }
     public int getScore() {
         if (levelOne.goalReached()) {
             ScoreSum += levelOne.getPoints();
@@ -27,8 +36,6 @@ public class Game {
         } else if (Game.isBonus()) {
             ScoreSum *= 3;
         }
-    }
-    public int playManyTimes(int num) {
-        return 0;
+        return ScoreSum;
     }
 }
