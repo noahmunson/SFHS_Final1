@@ -7,5 +7,8 @@ public class Main {
 
         bio2019.getEdition();
         bio2019.getBookInfo();
+
+        Game init = new Game(5);
+        System.out.println(init.playManyTimes());
     }
 }

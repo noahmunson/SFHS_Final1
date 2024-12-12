@@ -3,9 +3,9 @@ Noah Munson
  */
 
 public class Game {
-    private Level levelOne;
-    private Level  levelTwo;
-    private Level levelThree;
+    private Level levelOne = new Level();
+    private Level  levelTwo = new Level();
+    private Level levelThree = new Level();
     private int ScoreSum = 0;
     private static boolean BonusRound = false;
     private int numGames;
@@ -15,14 +15,14 @@ public class Game {
 
     public Game() {
         numGames = 1;
-        gameNum = 1;
         BonusRound = false;
-
     }
+
     public Game(int numGames) {
         this.numGames = numGames;
         gameNum = 1;
     }
+
     public static boolean isBonus() {
         if(gameNum > 1) {
             BonusRound = true;
@@ -30,15 +30,17 @@ public class Game {
         }
         return BonusRound;
     }
-    public void play() {
-        Game [] xGames = new Game[numGames];
+
+    public int playManyTimes() {
         for(gameNum = 1; gameNum <= numGames; gameNum++) {
-            xGames[gameNum] = new Game();
-            if (xGames[gameNum].getScore() > greatestScore) {
-                greatestScore = xGames[gameNum].getScore();
+            Game game = new Game();
+            if (game.getScore() > greatestScore) {
+                greatestScore = game.getScore();
             }
         }
+        return greatestScore;
     }
+
     public int getScore() {
         if (levelOne.goalReached()) {
             ScoreSum += levelOne.getPoints();
