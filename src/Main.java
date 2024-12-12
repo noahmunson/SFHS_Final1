@@ -1,14 +1,39 @@
-
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Textbook bio2015 = new Textbook("Biology", 49.75, 2);
-        Textbook bio2019 = new Textbook("Biology", 39.75, 3);
+        Scanner keyboard = new Scanner(System.in);
+        String title;
+        double price;
+        int edition;
+        int numGames;
 
-        bio2019.getEdition();
-        bio2019.getBookInfo();
+        System.out.println("What is the title?");
+        title = keyboard.nextLine();
+        System.out.println("What is the price?");
+        price = keyboard.nextDouble();
+        System.out.println("What is the Edition");
+        edition = keyboard.nextInt();
 
-        Game init = new Game(5);
-        System.out.println(init.playManyTimes());
+
+        Textbook bio2015 = new Textbook(title, price, edition);
+
+        System.out.println(bio2015.getBookInfo());
+
+        System.out.println("What is the title?");
+        title = keyboard.nextLine();
+        System.out.println("What is the price?");
+        price = keyboard.nextDouble();
+        System.out.println("What is the Edition");
+        edition = keyboard.nextInt();
+
+        Textbook bio2019 = new Textbook(title, price, edition);
+
+        System.out.println(bio2019.getBookInfo());
+
+        System.out.println("How many games do you want to play?");
+        numGames = keyboard.nextInt();
+        Game init = new Game(numGames);
+        System.out.println("High Score: " + init.playManyTimes());
     }
 }

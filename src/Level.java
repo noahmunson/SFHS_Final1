@@ -18,7 +18,7 @@ public class Level {
     }
     public int getPoints() {
         Random rand = new Random();
-        points = rand.nextInt(0, 1000);
+        points = rand.nextInt(500, 1000);
         return points;
     }
 }

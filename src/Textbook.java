@@ -4,10 +4,10 @@ class Textbook {
     private double price;
     private int edition;
 
-    public Textbook(String t, double p, int e) {
-        title = t;
-        price = p;
-        edition = e;
+    public Textbook(String title, double price, int edition) {
+        this.title = title;
+        this.price = price;
+        this.edition = edition;
     }
 
     public String getTitle() {
@@ -28,8 +28,7 @@ class Textbook {
 
     public boolean canSubstituteFor(Textbook book) {
         if (title.equals(book.getTitle()))
-            if (edition >= book.getEdition())
-                return true;
+            return edition >= book.getEdition();
         return false;
     }
 }
