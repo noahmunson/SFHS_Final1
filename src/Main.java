@@ -15,21 +15,9 @@ public class Main {
         System.out.println("What is the Edition");
         edition = keyboard.nextInt();
 
-
         Textbook bio2015 = new Textbook(title, price, edition);
 
         System.out.println(bio2015.getBookInfo());
-
-        System.out.println("What is the title?");
-        title = keyboard.nextLine();
-        System.out.println("What is the price?");
-        price = keyboard.nextDouble();
-        System.out.println("What is the Edition");
-        edition = keyboard.nextInt();
-
-        Textbook bio2019 = new Textbook(title, price, edition);
-
-        System.out.println(bio2019.getBookInfo());
 
         System.out.println("How many games do you want to play?");
         numGames = keyboard.nextInt();
