@@ -1,4 +1,4 @@
-This Aaron M and Noah Munson's Semester 1 final for APCSA at SFHS
+This is Aaron M and Noah Munson's Semester 1 final for APCSA at SFHS
 
 We had the 2022 test FRQ which involves making a game that finds the high score between each game and program that can tell you about a textbook you are looking to buy.
 
